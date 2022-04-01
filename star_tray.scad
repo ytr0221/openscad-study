@@ -40,12 +40,14 @@ module RBox(){
 }
 
 
+
+/*
 color([1,0,0]){
     points=[[10,10,0],[-10,10,0],[10,-10,0],[-10,-10,0]];
     for (p = points){
        translate(p*4) cylinder(d=4, h=3,center=true, $fn=50);
     }
-}
+}*/
 //RBox();
 
 
@@ -90,4 +92,16 @@ roundBox((cell_size+wall_thick*2-diff)*3,(cell_size+wall_thick*2-diff)*3,3,1,50)
         }
         
         
+ }
+ 
+ 
+ color([1,0,0]){
+ translate([0, 0, -1]){
+ center=(cell_size+wall_thick*2-diff)*3/2;
+ margin=40;
+    points=[[center-margin,center-margin,0],[center-margin,center+margin,0],[center+margin,center-margin,0],[center+margin,center+margin,0]];
+    for (p = points){
+       translate(p) cylinder(d=4, h=3,center=true, $fn=50);
+ }
+ }
  }
