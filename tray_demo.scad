@@ -27,7 +27,7 @@ difference() {
     tray([90, 90, 25], n_columns=3, n_rows=[3,3,3], dividers_thickness=2, dividers_bottom_bevel_radius=1);
 
 
-    /*
+    
         translate([6,6,0]){
         stars();
         }
@@ -63,7 +63,7 @@ difference() {
         translate([64,64,0]){
         stars();
     
-}*/
+}
 }
 
 
