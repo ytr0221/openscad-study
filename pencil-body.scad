@@ -8,7 +8,7 @@ include <BOSL2/threading.scad>
 
 
 
-BODY_HEIGHT=10;//118;
+BODY_HEIGHT=5;//118;
 INNER_R=3.5;
 
 
@@ -24,7 +24,7 @@ difference(){
     cylinder(h = BODY_HEIGHT, r = INNER_R, $fn=500);
     
     
-    translate([0,0,BODY_HEIGHT/2-threadhole_length/2]){
+    translate([0,0,threadhole_length/2]){
         //screw("#10-32", drive="hex", drive_size=1.5, length=12);
         //0.833
         $fn=300;
