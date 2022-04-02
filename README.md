@@ -1,1 +1,1 @@
-# scad-study
+# openscad-study
