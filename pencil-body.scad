@@ -13,8 +13,8 @@ INNER_R=3.5;
 
 
 
-$fn=32;
-threadhole_length=5;
+$fn=16;
+threadhole_length=8;
 
 
 
@@ -26,6 +26,8 @@ difference(){
     
     translate([0,0,BODY_HEIGHT/2-threadhole_length/2]){
         //screw("#10-32", drive="hex", drive_size=1.5, length=12);
-        threaded_rod(d=7.2, l=threadhole_length, pitch=0.833, left_handed=true, $fa=1, $fs=1);
+        //0.833
+        $fn=300;
+        threaded_rod(d=7.2, l=threadhole_length, pitch=0.8, left_handed=true, $fa=1, $fs=1);
     }
 }
