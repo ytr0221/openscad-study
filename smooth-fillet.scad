@@ -1,6 +1,6 @@
 module shape()
 {    
-    polygon([[0,0],[30,0],[30,30],[15,15],[0,45]]);
+    polygon([[0,0],[30,0],[30,30],[15,20],[0,45]]);
 }
 
 module smooth(r=3)
@@ -44,7 +44,7 @@ translate([80,0])
     resize([30,0,0])
     %text("Fillet()", size = 5);
 
-    fillet()
+    fillet(r=3)
     shape();
 }
 
