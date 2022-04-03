@@ -1,5 +1,8 @@
 # openscad-study
 
+## lasercut.scad
+https://hackaday.com/2022/01/02/an-openscad-library-for-all-your-cnc-cutting-needs/
+
 ## How to install CLI
 https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Using_OpenSCAD_in_a_command_line_environment#Command_line_usage
 
