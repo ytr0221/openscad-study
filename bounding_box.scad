@@ -33,7 +33,8 @@ module bbox() {
 module model()
   color("red") 
   union() {
-    sphere(10);
+    //sphere(10);
+    cube(5);
     translate([15,10,5]) cube(10);
   }
 
