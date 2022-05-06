@@ -76,7 +76,8 @@ module export(h,w)
 {	sideOffset = w + Dis;
 	/* rasteredSide(h,w);										// 2 lines for testing
 	   translate([0,w-MaterialThickness+0.5]) rasteredSide(h,w); */ // Substitute for the next statement
-
+    linear_extrude(height = 3){
+       
 	for (i = [0 : 3]) translate([0,i*sideOffset]) rasteredSide(h,w);
 	// Not obvious but very important correction when joining 2 toothed sides
 	translate([-(h+bottomWidth)/2-Dis,(w-MaterialThickness)/2]) bottom();
@@ -84,6 +85,7 @@ module export(h,w)
 	{	bottom();
 		hole();
 	}
+    }
 	/* The next line allows verifying the botton center alignment to the joint middle*/
 	/* translate([	(h+bottomWidth)/2+Dis,(w-MaterialThickness)/2]) square([2*h,0.4],center=true); */
 }
