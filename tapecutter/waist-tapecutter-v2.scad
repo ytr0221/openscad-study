@@ -1,4 +1,4 @@
-depth = 90;
+depth = 95;
 width = 60;
 height = 25;
 
@@ -29,10 +29,11 @@ translate([width/2+thickness/2,0,height/2]) rotate([0,90,0])
 translate([0,100/4+5, -thickness/2]) linear_extrude(height=thickness, convexity=20) smooth() square([width,100/2-10], center=true);
 
 //cutter
-translate([0,-depth/2+thickness/2,height/2]) rotate([90,0,0]) cube([width,height+thickness,thickness], center=true);
+//translate([0,-depth/2+thickness/2,height/2]) rotate([90,0,0]) cube([width,height+thickness,thickness], center=true);
 
 
-translate([-width/4,-depth/2+height/5+thickness/2,-thickness/2]) linear_extrude(height=thickness, convexity=20) smooth() square([width/2,height/5+thickness*2], center=true);
+
+//rotate(90) translate([-width/4,-depth/2+height/5+thickness/2,-thickness/2]) linear_extrude(height=thickness, convexity=20) smooth() square([width/2,height/5+thickness*2], center=true);
 
 
 
@@ -166,7 +167,7 @@ module cutter() {
 			rotate(180) arc(hd,ha);													//the hairpin angle
 			rotate(-180-ta(-ha)) union() {
 				translate([hd/2-th/2,5/2-eps]) rotate(-90) filament_hole(5,fhr);	//the other side of the filament hole
-				translate([hd/2-th+ed/2,5-eps]) rotate(-ta(ea)-180)arc(ed,ea);		//the curved "handle"
+				translate([hd/2-th+ed/2,5-eps]) arc(ed,ea);		//the curved "handle"
 			}
 		}
 	}	
@@ -177,7 +178,9 @@ linear_extrude(height=ct, convexity=20)
 	offset(-rr) offset(rr) offset(rr) offset(-rr) filament_clip2d();
 
     
-	translate([-width/2,-depth/2+4,height/2]) rotate([90,90]) linear_extrude(height=1.2, convexity=20) ribbed_section(height+thickness,rd);	
+    //blade
+    
+	translate([-width/2-18,45,height/2]) rotate([170,90,0]) linear_extrude(height=1.2, convexity=20) ribbed_section(height,rd);	
 
     
 translate([-40,45,25])  rotate([0,180,0]) 
